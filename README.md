@@ -38,7 +38,7 @@ Upload the contents of the site/ folder to your web server's root directory (e.g
 3. **Server Configuration (Nginx Example)**
 
 To ensure clean URLs and proper handling of 404s, use a configuration similar to this:
-
+---
    server {
        listen 80;
        server_name insightbuddhist.org;
@@ -52,7 +52,7 @@ To ensure clean URLs and proper handling of 404s, use a configuration similar to
        # Custom 404 page
        error_page 404 /404.html;
    }
-
+---
 ## Directory Structure
 
 docs/: The core content folder. All English pages are stored here as .md files.
