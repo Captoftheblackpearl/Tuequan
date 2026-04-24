@@ -1,0 +1,50 @@
+/* 1. Dark Grey/Blue Navigation Bar */
+.md-header {
+  background-color: #4a5568 !important; /* Matches the dark bar in your image */
+  color: white;
+}
+
+/* 2. Menu Text Styling */
+.md-tabs__link {
+  color: rgba(255, 255, 255, 0.8) !important;
+  font-weight: 400;
+  font-size: 0.75rem;
+  text-transform: none;
+}
+
+/* 3. Center Navigation Buttons (the "Pills") */
+/* To create the "Khóa Thiền" and "Phật Pháp" buttons in the center */
+.tuequan-hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 20px 0;
+}
+
+.tuequan-btn {
+  background-color: #8c7851; /* Earthy brown from image */
+  color: white !important;
+  padding: 5px 25px;
+  border-radius: 15px;      /* Rounded pill shape */
+  font-size: 0.8rem;
+  text-decoration: none;
+  border: 1px solid #7a6845;
+}
+
+/* 4. Center the Title and Content */
+.md-main__inner {
+  text-align: center;
+}
+/* Center the navigation tabs */
+.md-tabs__list {
+    justify-content: center;
+    display: flex;
+}
+
+/* Make them look like small buttons */
+.md-tabs__link {
+    font-size: 0.7rem;
+    padding: 0 15px;
+    text-transform: uppercase;
+}
+

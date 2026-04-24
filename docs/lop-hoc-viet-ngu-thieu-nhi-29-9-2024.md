@@ -1,0 +1,34 @@
+---
+title: "Lớp học Việt ngữ thiếu nhi, 29/9/2024"
+date: 2024-08-28
+categories: 
+  - "lop-hoc-viet-ngu-thieu-nhi"
+coverImage: "post-FB.png"
+---
+
+![Poster](/images/post-FB.png)
+
+
+Tuệ Quán Thiền Viện xin thông báo Khai giảng Lớp học Việt Ngữ dành cho các bạn thiếu nhi tại chùa Tuệ Quán Thiền Viện ở thành phố Santa Ana
+
+Ngày Khai Giảng: Chủ nhật, ngày 29.09.2024  
+Dành cho các bạn nhỏ từ 5 tuổi trở lên  
+Lớp học hoàn toàn Miễn phí  
+Thời gian: Chủ Nhật hàng tuần, từ 10 am - 12:00 pm
+
+  
+Chương trình GIÚP CÁC BẠN NHỎ:  
+🍁Nghe - Nói - Đọc- Viết Tiếng Việt  
+🍁Học Chánh Niệm - Đạo Đức - Giáo lý Phật Pháp.  
+🍁Tìm hiểu văn hoá Việt Nam
+
+Quý vị phụ huynh có nhu cầu ghi danh cho con em mình , xin vui lòng điền vào form đăng ký đính kèm bên dưới hoặc liên hệ tư vấn tại:
+
+[https://bit.ly/lophocvietngu](https://bit.ly/lophocvietngu)
+
+TUỆ QUÁN THIỀN VIỆN  
+📍3922 W 5th st, Santa Ana, CA 92703  
+☎️ (657) 520 5134  
+📧tuequan.info@gmail.
+
+Xin chân thành cám ơn và trân trọng.

@@ -1,0 +1,58 @@
+site_name: Tue Quan
+site_url: https://tuequan.org
+theme:
+  name: material
+  language: vi
+  logo: assets/logo.png  # We will add this in the next step
+  favicon: assets/favicon.ico
+  features:
+    - navigation.top
+    - navigation.tabs        # Adds the horizontal top menu like the original site
+    - navigation.sections    # Organizes the sidebar better
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+  palette:
+    primary: custom            # We will define "custom" in CSS
+    accent: custom
+
+extra_css:
+  - stylesheets/extra.css      # This is where the magic happens
+
+markdown_extensions:
+  - attr_list
+  - md_in_html
+  - admonition               # For "Note" and "Warning" boxes
+  - pymdownx.details         # For collapsible "Read More" sections
+  - pymdownx.superfences
+
+use_directory_urls: true
+nav:
+  - Trang Chủ: index.md
+  - Giới Thiệu:
+      - Giới thiệu: gioi_thieu.md
+      - Hành thiền: hanh_thien.md
+      - Liên hệ: lien-he.md
+  - Chương Trình:
+      - Chương trình: chuong-trinh.md
+      - Khóa thiền: dang-ky-khoa-thien.md
+      - Thực hành hàng tuần: thuc-hanh-hang-tuan.md
+      - Sự kiện sắp tới: su-kien-sap-dien-ra.md
+      - Sự kiện vừa qua: su-kien-vua-dien-ra.md
+  - Phật Pháp:
+      - Bài kinh: bai-kinh.md
+      - Bài pháp: bai-phap.md
+      - Kinh điển: kinh-dien.md
+      - Pháp thoại: phap-thoai.md
+      - Danh sách pháp thoại: danh-sach-phap-thoai.md
+  - Lớp Học:
+      - Lớp học Pali: lop-hoc-pali.md
+      - Lớp Pali thiếu nhi: lop-pali-thieu-nhi.md
+  - Thư Viện Ảnh:
+      - Thư viện ảnh: thu-vien-anh.md
+      - Hình ảnh: hinh-anh.md
+      - Hình ảnh sinh hoạt: hinh-anh-sinh-hoat.md
+      - Khóa thiền 25-06-2023: hinh-anh-khoa-thien-chu-nhat-ngay-25-thang-6-nam-2023.md
+  - Đóng Góp:
+      - Hùn phước: hun-phuoc.md
+      - Lễ trai tăng & Sám hối: le-trai-tang-va-sam-hoi.md

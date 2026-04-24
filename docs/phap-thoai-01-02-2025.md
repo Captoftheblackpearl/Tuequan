@@ -1,0 +1,20 @@
+---
+title: "Pháp thoại, 01/02/2025"
+date: 2025-01-18
+categories: 
+  - "phap-thoai"
+  - "su-kien-da-qua"
+coverImage: "473574741_499038056544662_2713996313421878757_n.jpg"
+---
+
+Tuệ Quán Thiền Viện trân trọng kính mời Quý vị đồng hương Phật Tử hoan hỷ vân tập đến Thiền Viện để tham dự buổi Thuyết Pháp đặc biệt của Ngài Trưởng Lão Tam Tạng thứ IX BHADDANTA GANDHAMĀLĀLANKĀRA
+
+![⏰](⏰)Vào lúc : 9:00 AM - 1:00 PM
+
+![📆](📅)NGÀY 01 THÁNG 02 NĂM 2025
+
+(nhằm mùng 4 tháng giêng Âm lịch).
+
+![🎯]/images/1f3af.png)Tại. : TUỆ QUÁN THIỀN VIỆN
+
+![📮]/images/1f4ee.png)Địa chỉ : 3922 W 5 TH ST, SANTA ANA 92703

@@ -1,0 +1,29 @@
+---
+title: "Lớp học Pāli 1B Thứ Năm, 13/11/2025"
+date: 2025-10-21
+categories: 
+  - "lop-hoc-pali"
+  - "su-kien-da-qua"
+coverImage: "pali-1B.jpg"
+---
+
+![Poster](/images/pali-1B.jpg)
+
+
+Thứ Năm,13/11/2025
+
+5:00 pm - 6:30 pm PST
+
+8:00 pm - 9:30 pm EST
+
+Điều kiện tiên quyết: phải hoàn thành Pāli 1A (hoặc kỳ thi tương đương)
+
+Giảng sư: Venerable Bhante Rathana
+
+Lớp học trực tuyến qua Zoom
+
+Đăng ký:
+
+pali@insightbuddhist.org
+
+[https://bit.ly/pali1B](https://bit.ly/pali1B)

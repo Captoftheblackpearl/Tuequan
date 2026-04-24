@@ -1,0 +1,27 @@
+---
+title: "Lễ Trai Tăng & Sám Hối, 01/02/2026"
+date: 2026-01-31
+categories: 
+  - "le-trai-tang-sam-hoi"
+  - "su-kien-da-qua"
+coverImage: "1-2.png"
+---
+
+![Poster](/images/1-2.png)
+
+
+Chủ Nhật, ngày 01 tháng 02 năm 2026
+
+**Thời gian: 9:00 am - 1:00 pm**
+
+**TĂNG ĐOÀN ANANDA TÍCH LAN**
+
+**TỲ KHƯU RATHANA**
+
+Mời quý Phật Tử đến Tuệ Quán Thiền Viện tham dự
+
+### Liên hệ:
+
+### tuequan.info@gmail.com
+
+### 3922 W 5th St. Santa Ana, CA 92703

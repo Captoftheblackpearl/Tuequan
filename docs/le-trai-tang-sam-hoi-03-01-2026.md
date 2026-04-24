@@ -1,0 +1,29 @@
+---
+title: "Lễ Trai Tăng & Sám Hối, 03/01/2026"
+date: 2025-12-30
+categories: 
+  - "le-trai-tang-sam-hoi"
+  - "su-kien-da-qua"
+coverImage: "1-5.png"
+---
+
+![Poster](/images/1-5.png)
+
+
+Thứ bảy, ngày 03 tháng 01 năm 2026
+
+**Thời gian: 9:00 am - 1:00 pm**
+
+**TĂNG ĐOÀN ANANDA THIỀN VIỆN**
+
+**TĂNG ĐOÀN THÍCH CA THIỀN VIỆN**
+
+**TĂNG ĐOÀN CHÙA WAT VONGSA SAHAK BORI KAMPUCHEA KROM**
+
+Mời quý Phật Tử đến Tuệ Quán Thiền Viện tham dự
+
+### Liên hệ:
+
+### tuequan.info@gmail.com
+
+### 3922 W 5th St. Santa Ana, CA 92703
