@@ -3,22 +3,305 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pics</title>
-    
-    <!-- SEO and Social Media Metadata -->
-    <meta name="description" content="A brief description of your webpage content.">
-    
-    <!-- Link to external CSS Stylesheet -->
-    <link rel="stylesheet" href="style.css">
+    <title>Picture Gallery</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        darkBg: '#0d1117',
+                        cardBg: '#161b22',
+                        borderCol: '#30363d'
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Inter Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
 </head>
-<body>
-    <main>
-        <img src="Image.jpg" alt="Description of the image">
-        <img src="Image(1).jpg" alt="Description of the image">
-        <img src="Image(2).jpg" alt="Description of the image">
-        <img src="Image(3).jpg" alt="Description of the image">
-        <img src="Image(4).jpg" alt="Description of the image">
-        <img src="Image(5).jpg" alt="Description of the image">
+<body class="bg-darkBg text-gray-100 min-h-screen flex flex-col antialiased">
+
+    <!-- Header / Navbar -->
+    <header class="border-b border-borderCol bg-cardBg/80 backdrop-blur sticky top-0 z-30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="bg-blue-600/20 p-2 rounded-lg text-blue-400 border border-blue-500/30">
+                    <i class="fa-solid fa-folder-open text-lg"></i>
+                </div>
+                <div>
+                    <h1 class="text-lg font-semibold tracking-tight text-gray-200">Captoftheblackpearl / Tuequan</h1>
+                    <p class="text-xs text-gray-400">Repository image gallery &bull; <span id="image-count" class="text-blue-400 font-medium">12 images</span></p>
+                </div>
+            </div>
+            <div class="flex items-center space-x-2">
+                <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+                    <span class="w-1.5 h-1.5 mr-1.5 bg-emerald-400 rounded-full animate-pulse"></span> Live Gallery
+                </span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        
+        <!-- Controls & Filter Toolbar -->
+        <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6 gap-4 pb-4 border-b border-borderCol">
+            <div>
+                <h2 class="text-2xl font-bold tracking-tight text-white flex items-center gap-2">
+                    <i class="fa-solid fa-images text-blue-400 text-xl"></i> Repository Pictures
+                </h2>
+                <p class="text-sm text-gray-400 mt-0.5">Click any image to open the high-resolution lightbox view.</p>
+            </div>
+            
+            <div class="flex items-center gap-3 w-full sm:w-auto">
+                <div class="relative w-full sm:w-64">
+                    <span class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none text-gray-400">
+                        <i class="fa-solid fa-search text-xs"></i>
+                    </span>
+                    <input type="text" id="search-input" placeholder="Search filenames..." 
+                        class="w-full pl-9 pr-4 py-2 bg-cardBg border border-borderCol rounded-lg text-sm text-gray-200 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all">
+                </div>
+                <div class="flex bg-cardBg border border-borderCol rounded-lg p-0.5">
+                    <button id="grid-view-btn" class="p-1.5 px-3 rounded-md bg-blue-600 text-white text-xs font-medium transition-all shadow-sm">Grid</button>
+                    <button id="compact-view-btn" class="p-1.5 px-3 rounded-md text-gray-400 hover:text-white text-xs font-medium transition-all">Compact</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Gallery Grid -->
+        <div id="gallery-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
+            <!-- Images will be dynamically rendered via JavaScript for robust fallback handling -->
+        </div>
+
+        <!-- Empty State (hidden by default) -->
+        <div id="empty-state" class="hidden text-center py-16">
+            <div class="text-gray-500 text-4xl mb-3"><i class="fa-solid fa-image-slash"></i></div>
+            <h3 class="text-lg font-medium text-gray-300">No matching pictures found</h3>
+            <p class="text-sm text-gray-500 mt-1">Try adjusting your search query.</p>
+        </div>
     </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-borderCol bg-cardBg py-4 text-center text-xs text-gray-500">
+        <p>&copy; 2026 Captoftheblackpearl / Tuequan. All repository assets displayed securely.</p>
+    </footer>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="fixed inset-0 z-50 bg-black/90 backdrop-blur-md hidden flex items-center justify-center p-4 sm:p-8 transition-opacity duration-300">
+        <button id="lightbox-close" class="absolute top-5 right-5 text-gray-400 hover:text-white bg-cardBg/80 border border-borderCol p-3 rounded-full transition-all focus:outline-none z-10">
+            <i class="fa-solid fa-xmark text-lg"></i>
+        </button>
+        <button id="lightbox-prev" class="absolute left-4 sm:left-8 top-1/2 -translate-y-1/2 text-gray-400 hover:text-white bg-cardBg/80 border border-borderCol p-3 rounded-full transition-all focus:outline-none z-10">
+            <i class="fa-solid fa-chevron-left"></i>
+        </button>
+        <button id="lightbox-next" class="absolute right-4 sm:right-8 top-1/2 -translate-y-1/2 text-gray-400 hover:text-white bg-cardBg/80 border border-borderCol p-3 rounded-full transition-all focus:outline-none z-10">
+            <i class="fa-solid fa-chevron-right"></i>
+        </button>
+        
+        <div class="max-w-4xl max-h-[85vh] flex flex-col items-center">
+            <img id="lightbox-img" src="" alt="Full view" class="max-h-[75vh] max-w-full object-contain rounded-lg shadow-2xl border border-borderCol">
+            <div class="mt-4 text-center">
+                <h3 id="lightbox-title" class="text-sm font-semibold text-gray-200"></h3>
+                <p id="lightbox-counter" class="text-xs text-gray-400 mt-1"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Gallery Script -->
+    <script>
+        // Array of images extracted directly from the repository directory listing
+        const images = [
+            {
+                name: "1BDF3405-B89C-4381-BC3A-F5910D39D493.jpg",
+                path: "1BDF3405-B89C-4381-BC3A-F5910D39D493.jpg",
+                type: "JPEG Asset"
+            },
+            {
+                name: "Image(1).jpg",
+                path: "Image(1).jpg",
+                type: "JPEG Photo"
+            },
+            {
+                name: "Image(2).jpg",
+                path: "Image(2).jpg",
+                type: "JPEG Photo"
+            },
+            {
+                name: "Image(3).jpg",
+                path: "Image(3).jpg",
+                type: "JPEG Photo"
+            },
+            {
+                name: "Image(4).jpg",
+                path: "Image(4).jpg",
+                type: "JPEG Photo"
+            },
+            {
+                name: "Image(5).jpg",
+                path: "Image(5).jpg",
+                type: "JPEG Photo"
+            },
+            {
+                name: "Image.jpg",
+                path: "Image.jpg",
+                type: "JPEG Photo"
+            },
+            {
+                name: "Screenshot 2026-10-14 at 15-48-37 Instagram.png",
+                path: "Screenshot 2026-10-14 at 15-48-37 Instagram.png",
+                type: "PNG Screenshot"
+            },
+            {
+                name: "Screenshot 2026-10-14 at 16-14-53 Photo - Google Photos.png",
+                path: "Screenshot 2026-10-14 at 16-14-53 Photo - Google Photos.png",
+                type: "Google Photos"
+            },
+            {
+                name: "Screenshot 2026-10-14 at 16-16-06 Photo - Google Photos.png",
+                path: "Screenshot 2026-10-14 at 16-16-06 Photo - Google Photos.png",
+                type: "Google Photos"
+            },
+            {
+                name: "Untitled design.png",
+                path: "Untitled design.png",
+                type: "PNG Graphic"
+            },
+            {
+                name: "yumabes.png",
+                path: "yumabes.png",
+                type: "PNG Asset"
+            }
+        ];
+
+        let currentIndex = 0;
+        let filteredImages = [...images];
+
+        const gridEl = document.getElementById('gallery-grid');
+        const emptyStateEl = document.getElementById('empty-state');
+        const searchInput = document.getElementById('search-input');
+        const imageCountEl = document.getElementById('image-count');
+
+        // Lightbox elements
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const lightboxTitle = document.getElementById('lightbox-title');
+        const lightboxCounter = document.getElementById('lightbox-counter');
+        const closeBtn = document.getElementById('lightbox-close');
+        const prevBtn = document.getElementById('lightbox-prev');
+        const nextBtn = document.getElementById('lightbox-next');
+
+        function renderGallery(items) {
+            gridEl.innerHTML = '';
+            if (items.length === 0) {
+                emptyStateEl.classList.remove('hidden');
+                return;
+            }
+            emptyStateEl.classList.add('hidden');
+
+            items.forEach((img, idx) => {
+                const card = document.createElement('div');
+                card.className = "group bg-cardBg border border-borderCol rounded-xl overflow-hidden shadow-sm hover:shadow-xl hover:border-blue-500/50 transition-all duration-300 flex flex-col cursor-pointer";
+                
+                // Use placehold.co gracefully as robust fallback if local file is missing in preview mode
+                const placeholderUrl = `https://placehold.co/600x400/161b22/3b82f6?text=${encodeURIComponent(img.name)}`;
+
+                card.innerHTML = `
+                    <div class="relative aspect-[4/3] bg-gray-900 overflow-hidden flex items-center justify-center">
+                        <img src="${img.path}" alt="${img.name}" 
+                             onerror="this.onerror=null; this.src='${placeholderUrl}';"
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-2">
+                            <span class="bg-blue-600 text-white text-xs px-3 py-1.5 rounded-full font-medium shadow-lg flex items-center gap-1.5">
+                                <i class="fa-solid fa-expand text-[10px]"></i> View Full
+                            </span>
+                        </div>
+                        <span class="absolute top-2.5 right-2.5 bg-black/60 backdrop-blur-md text-gray-300 text-[10px] font-medium px-2 py-1 rounded border border-white/10">
+                            ${img.type}
+                        </span>
+                    </div>
+                    <div class="p-3.5 flex flex-col justify-between flex-grow">
+                        <h3 class="text-xs font-medium text-gray-200 truncate group-hover:text-blue-400 transition-colors" title="${img.name}">
+                            ${img.name}
+                        </h3>
+                    </div>
+                `;
+
+                card.addEventListener('click', () => {
+                    openLightbox(images.indexOf(img));
+                });
+
+                gridEl.appendChild(card);
+            });
+
+            imageCountEl.textContent = `${items.length} image${items.length === 1 ? '' : 's'}`;
+        }
+
+        function openLightbox(index) {
+            currentIndex = index;
+            const img = images[currentIndex];
+            const placeholderUrl = `https://placehold.co/800x600/161b22/3b82f6?text=${encodeURIComponent(img.name)}`;
+            
+            lightboxImg.src = img.path;
+            lightboxImg.onerror = function() {
+                this.onerror = null;
+                this.src = placeholderUrl;
+            };
+            
+            lightboxTitle.textContent = img.name;
+            lightboxCounter.textContent = `Image ${currentIndex + 1} of ${images.length}`;
+            
+            lightbox.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            lightbox.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        function showPrev() {
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            openLightbox(currentIndex);
+        }
+
+        function showNext() {
+            currentIndex = (currentIndex + 1) % images.length;
+            openLightbox(currentIndex);
+        }
+
+        // Event Listeners
+        searchInput.addEventListener('input', (e) => {
+            const query = e.target.value.toLowerCase();
+            filteredImages = images.filter(img => img.name.toLowerCase().includes(query));
+            renderGallery(filteredImages);
+        });
+
+        closeBtn.addEventListener('click', closeLightbox);
+        prevBtn.addEventListener('click', (e) => { e.stopPropagation(); showPrev(); });
+        nextBtn.addEventListener('click', (e) => { e.stopPropagation(); showNext(); });
+
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) closeLightbox();
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (lightbox.classList.contains('hidden')) return;
+            if (e.key === 'Escape') closeLightbox();
+            if (e.key === 'ArrowLeft') showPrev();
+            if (e.key === 'ArrowRight') showNext();
+        });
+
+        // Initial Render
+        renderGallery(images);
+    </script>
 </body>
 </html>
